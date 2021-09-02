@@ -14,7 +14,7 @@ def guess_num_game():
                 print("\nThat is greater than the value expected. Try again")
             elif result < 20:
                 print("\nYou guessed wrong! Try again")
-        except:
+        except ValueError:
             print("\ninvalid value, expected a number!")
 
 
@@ -31,7 +31,7 @@ def guess_num_game_2():
             elif result_2 not in [10, 20, 30, 40]:
                 print("You failed the game, Thank you for playing")
                 return guess_num_game_2()
-        except:
+        except ValueError:
             print("\ninvalid value, expected a number!")
 
 
@@ -48,7 +48,7 @@ def final_num_game():
             elif result_3 != final_num:
                 print("\nYou were incorrect. I'm sorry, you lose")
                 return final_num_game()
-        except:
+        except ValueError:
             print("\nInvalid value, expected a number!")
             pass
 final_num_game()
