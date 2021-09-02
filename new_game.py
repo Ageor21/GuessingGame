@@ -42,7 +42,7 @@ def choice_game():
             while play_again != "y" or "n":
                 print("\nThat is an invalid input")
                 return num_game.guess_num_game()
-        except:
+        except Exception:
             print("That is an invalid input")
 
 # displays the choice_game function
