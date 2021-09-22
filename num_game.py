@@ -2,6 +2,7 @@
 num_sum = [10, 20, 30, 40]
 final_num = 10
 
+
 # Creates a conditional number guessing game
 def guess_num_game():
     while True:
@@ -20,15 +21,17 @@ def guess_num_game():
 
 guess_num_game()
 
+
 # If user passes game 1 they proceed to game 2. Multiple chances are given to the user if guess is wrong
 def guess_num_game_2():
     while True:
+        global num_sum
         try:
             result_2 = int(input("\n(Round 2) What number am I thinking of? from 1 - 40: "))
-            if result_2 in [10, 20, 30, 40]:
+            if result_2 in num_sum:
                 print("You knew! You win this round, congrats!")
                 break
-            elif result_2 not in [10, 20, 30, 40]:
+            elif result_2 not in num_sum:
                 print("You failed the game, Thank you for playing")
                 return guess_num_game_2()
         except ValueError:
@@ -37,9 +40,11 @@ def guess_num_game_2():
 
 guess_num_game_2()
 
+
 # If the player guesses the right equation the player moves on to the next game
 def final_num_game():
     while True:
+        global final_num
         try:
             result_3 = int(input("\n(Final round) what is the equation of (100/20) + (3+2): "))
             if result_3 == final_num:
@@ -51,6 +56,9 @@ def final_num_game():
         except ValueError:
             print("\nInvalid value, expected a number!")
             pass
+
+
 final_num_game()
+
 
 
